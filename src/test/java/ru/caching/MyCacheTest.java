@@ -57,7 +57,7 @@ public class MyCacheTest {
         start.countDown();
 
         ready.await();
-        assertEquals(127, myCache.getCacheSize());
+        assertEquals(80127, myCache.getCacheSize());
 
     }
 
@@ -67,7 +67,7 @@ public class MyCacheTest {
         } catch (InterruptedException e) {
             // handle
         }
-        myCache.putToCache(new byte[1_000_000]);
+        myCache.putToCache(new byte[80000]);
         ready.countDown();
     }
 }
